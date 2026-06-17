@@ -1,0 +1,199 @@
+@use '../../styles/theme' as *;
+
+.hero-section {
+    width: 100%;
+    background: $white;
+
+    .header {
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include breakpoint('md') {
+            padding: 16px 100px;
+        }
+    }
+
+    .offer-strip {
+        background: linear-gradient(90deg, #cff0c4 0%, #c7e0f2 100%);
+        padding: 10px 12px;
+        text-align: center;
+        font-size: 13px;
+        font-weight: 500;
+        color: $black;
+
+        .old-price {
+            text-decoration: line-through;
+            color: #9ca3af;
+            margin: 0 2px;
+        }
+
+        .new-price {
+            font-weight: 700;
+            color: $black;
+            margin-right: 2px;
+        }
+
+        @include breakpoint('md') {
+            font-size: 14px;
+            padding: 8px 32px;
+        }
+    }
+
+    .banner {
+        width: 100%;
+
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    .form-section {
+        padding: 24px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        max-width: 1180px;
+        margin: 0 auto;
+
+        @include breakpoint('md') {
+            padding: 22px 40px 36px;
+            gap: 24px;
+        }
+
+        h2,
+        .question {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.35;
+            color: #181c1c;
+            text-align: center;
+
+            @include breakpoint('md') {
+                font-size: 24px;
+            }
+        }
+
+        .radio-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+            width: 100%;
+
+            .radio-item {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                cursor: pointer;
+
+                span {
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: #181c1c;
+
+                    @include breakpoint('md') {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+
+        .input-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            @include breakpoint('md') {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 324px));
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+
+            @include breakpoint('md') {
+                max-width: 90%;
+                margin: 0 auto;
+            }
+
+            div {
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 140%;
+                color: #b0b0b0;
+            }
+        }
+
+        .clinic-card {
+            margin-top: 26px;
+            padding: 24px 22px;
+            border-radius: 20px;
+            background: #f0f9ff;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+
+            @include breakpoint('md') {
+                padding: 40px 100px;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        .clinic-copy {
+            max-width: 600px;
+
+            div {
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 1.45;
+                color: #181c1c;
+            }
+
+            @include breakpoint('md') {
+                div {
+                    font-size: 28px;
+                }
+            }
+        }
+
+        .clinic-right {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 32px;
+
+            @include breakpoint('md') {
+                flex-direction: column;
+            }
+
+            button {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                border: none;
+                background: transparent;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: 600;
+                color: #8f62d4;
+
+                img {
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+        }
+    }
+}

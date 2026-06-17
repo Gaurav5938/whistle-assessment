@@ -1,0 +1,28 @@
+@use '../../styles/theme' as *;
+
+.checkbox {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+
+    input {
+        display: none;
+    }
+
+    .box {
+        width: 14px;
+        height: 14px;
+        border: 1px solid;
+        border-radius: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+    }
+
+    .tick {
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 1;
+    }
+}

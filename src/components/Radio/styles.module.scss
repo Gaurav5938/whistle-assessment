@@ -1,0 +1,32 @@
+@use '../../styles/theme' as *;
+
+.radio {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+
+    input {
+        display: none;
+    }
+
+    .circle {
+        width: 14px;
+        height: 14px;
+        border: 1.5px solid #181c1c;
+        border-radius: 50%;
+        position: relative;
+    }
+
+    input:checked + .circle::after {
+        content: '';
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 6px;
+        height: 6px;
+        background: #181c1c;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

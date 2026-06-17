@@ -1,0 +1,24 @@
+@use '../../styles/theme' as *;
+
+.button {
+  width: 100%;
+  height: 42px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 6px;
+  background-color: #b497ef;
+  font-size: 14px;
+  font-weight: 600;
+  color: $white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: $primary-violet;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

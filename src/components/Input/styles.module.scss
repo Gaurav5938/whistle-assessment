@@ -1,0 +1,58 @@
+@use '../../styles/theme' as *;
+
+.wrapper {
+    position: relative;
+    width: 100%;
+
+    .label {
+        position: absolute;
+        top: -7px;
+        left: 14px;
+        padding: 0 6px;
+        background: $white;
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 1;
+        color: #bababa;
+        z-index: 1;
+
+        @include breakpoint('md') {
+            font-size: 11px;
+        }
+    }
+
+    .input {
+        width: 100%;
+        height: 42px;
+        padding: 0 14px;
+        border: 1px solid #d6d6d6;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #181c1c;
+        outline: none;
+
+        @include breakpoint('md') {
+            font-size: 14px;
+        }
+
+        &::placeholder {
+            color: #b2b2b2;
+        }
+
+        &:focus {
+            border-color: #b89cf0;
+        }
+    }
+
+    .error {
+        border-color: #ff4d4f;
+    }
+
+    .error-text {
+        display: block;
+        margin-top: 4px;
+        font-size: 12px;
+        color: #ff4d4f;
+    }
+}
