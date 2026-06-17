@@ -1,0 +1,50 @@
+@use '../../styles/theme' as *;
+
+.section {
+    padding: 40px 16px;
+    text-align: center;
+
+    @include breakpoint('md') {
+        padding: 56px 100px;
+    }
+
+    .title-text {
+        margin-bottom: 28px;
+        font-size: 22px;
+        font-weight: 800;
+
+        @include breakpoint('md') {
+            margin-bottom: 40px;
+            font-size: 40px;
+        }
+    }
+
+    .grid {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        scroll-snap-type: x proximity;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        > * {
+            flex: 0 0 calc(100% - 56px);
+            scroll-snap-align: start;
+        }
+
+        @include breakpoint('md') {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            overflow: visible;
+            padding-bottom: 0;
+
+            > * {
+                flex: initial;
+            }
+        }
+    }
+}
