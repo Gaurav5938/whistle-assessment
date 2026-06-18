@@ -64,3 +64,8 @@ src/
 ## Approach
 
 The application was developed using a reusable component-based architecture to ensure scalability and maintainability. API data is fetched dynamically with proper loading and error handling, while TypeScript is used for type safety. The UI is fully responsive and closely follows the provided Figma designs across different screen sizes.
+
+### Note
+
+The public APIs provided for the assessment do not exactly match the content shown in the Figma designs. However, the APIs were integrated as required, and the returned data was mapped appropriately to demonstrate dynamic rendering, API integration, loading states, error handling, and reusable component usage.
+
