@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+# Whistle Assessment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive frontend application built using **React, TypeScript, Vite, and SCSS Modules** based on the provided Figma design.
 
-Currently, two official plugins are available:
+## Features Implemented
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Responsive Hero Section
+* Form validation for Name and Mobile Number
+* Dynamic button enable/disable state
+* Custom Checkbox and Radio components
+* Reusable UI Components (Button, Input, Card, Accordion)
+* Why Whistle Section with API integration
+* FAQ Section with API integration
+* Loading and Error state handling
+* Single-open Accordion functionality
+* Mobile, Tablet, and Desktop responsive layouts
 
-## React Compiler
+## APIs Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Why Whistle Section
 
-## Expanding the ESLint configuration
+https://fakestoreapi.com/products
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### FAQ Section
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+https://jsonplaceholder.typicode.com/posts
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Setup Instructions
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone <repository-url>
+cd whistle-assessment
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Build Project
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+## Project Structure
+
+```text
+src/
+├── assets/
+├── components/
+│   ├── Accordion
+│   ├── Button
+│   ├── Card
+│   ├── Checkbox
+│   ├── Input
+│   └── Radio
+├── container/
+│   ├── HeroSection
+│   ├── WhyWhistleSection
+│   └── FAQSection
+├── styles/
+├── utils/
+└── App.tsx
+```
+
+## Approach
+
+The application was developed using a reusable component-based architecture to ensure scalability and maintainability. API data is fetched dynamically with proper loading and error handling, while TypeScript is used for type safety. The UI is fully responsive and closely follows the provided Figma designs across different screen sizes.
