@@ -18,9 +18,11 @@
         justify-content: center;
         align-items: center;
         background: #fff;
+        transition: all 0.2s ease;
     }
 
     .tick {
+        color: $white;
         font-size: 10px;
         font-weight: 700;
         line-height: 1;

@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import PlusIcon from '../../assets/svg/plus-icon.svg';
 import MinusIcon from '../../assets/svg/minus-icon.svg';
 
@@ -8,18 +6,15 @@ import styles from './styles.module.scss';
 interface AccordionProps {
     question: string;
     answer: string;
+    isOpen: boolean;
+    onToggle: () => void;
 }
 
-const Accordion = ({ question, answer }: AccordionProps) => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const handleToggle = () => {
-        setIsOpen((prev) => !prev);
-    };
+const Accordion = ({ question, answer, isOpen, onToggle }: AccordionProps) => {
 
     return (
         <div className={styles['accordion-container']}>
-            <div className={styles['header-wrapper']} onClick={handleToggle}>
+            <div className={styles['header-wrapper']} onClick={onToggle}>
                 <div className={styles['question-part']}>{question}</div>
 
                 <span className={styles.icon}>

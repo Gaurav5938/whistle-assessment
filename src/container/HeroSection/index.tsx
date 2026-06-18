@@ -30,6 +30,22 @@ const HeroSection = () => {
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
 
+        if (name === 'name') {
+            if (!/^[a-zA-Z ]*$/.test(value)) {
+                return;
+            }
+        }
+
+        if (name === 'mobile') {
+            if (value.length > 10) {
+                return;
+            }
+
+            if (value && !/^\d*$/.test(value)) {
+                return;
+            }
+        }
+
         setFormData((prev) => ({
             ...prev,
             [name]: value,
@@ -39,6 +55,8 @@ const HeroSection = () => {
     const handleCheckboxChange = () => {
         setConsent((prev) => !prev);
     };
+
+    const isFormValid = formData.name.trim().length >= 3 && formData.mobile.length === 10;
 
     return (
         <section className={styles['hero-section']}>
@@ -100,12 +118,12 @@ const HeroSection = () => {
                         onChange={handleInputChange}
                     />
 
-                    <Button label={text.bookFreeScan} />
+                    <Button label={text.bookFreeScan} disabled={!isFormValid} />
                 </div>
 
                 <div className={styles['checkbox-wrapper']}>
                     <Checkbox checked={consent} onChange={handleCheckboxChange} color='#8F62D4' />
-                    <div>{text.consent}</div>
+                    <div className={styles['consent-text']}>{text.consent}</div>
                 </div>
 
                 <div className={styles['clinic-card']}>

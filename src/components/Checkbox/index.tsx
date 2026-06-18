@@ -11,17 +11,11 @@ const Checkbox = ({ checked, onChange, color = '#181c1c' }: CheckboxProps) => {
         <label className={styles.checkbox}>
             <input type='checkbox' checked={checked} onChange={onChange} />
 
-            <div className={styles.box} style={{ borderColor: color }}>
-                {checked && (
-                    <div
-                        className={styles.tick}
-                        style={{
-                            color,
-                        }}
-                    >
-                        ✓
-                    </div>
-                )}
+            <div
+                className={styles.box}
+                style={{ borderColor: color, backgroundColor: checked ? color : '#fff' }}
+            >
+                {checked && <div className={styles.tick}>✓</div>}
             </div>
         </label>
     );
